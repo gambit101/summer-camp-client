@@ -1,0 +1,62 @@
+[
+    {
+        "_id": "643010e0f5a7e52ce1e8fa65",
+        "name": "football",
+        "instructor": "Pep Gardiola",
+        "seats": 40,
+        "price": 100,
+        "image": "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=449&q=80",
+        "details": "Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        "students": 30
+    },
+    {
+        "_id": "643010f9f5a7e52ce1e8fa66",
+        "name": "cricket",
+        "instructor": "Domingo",
+        "seats": 40,
+        "price": 80,
+        "image": "https://images.unsplash.com/photo-1629285483773-6b5cde2171d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNyaWNrZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)",
+        "students": 20
+    },
+    {
+        "_id": "6430110af5a7e52ce1e8fa67",
+        "name": "tennis",
+        "instructor": "Tiger Woods",
+        "seats": 20,
+        "price": 90,
+        "image": "https://images.unsplash.com/photo-1542144582-1ba00456b5e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=478&q=80",
+        "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)",
+        "students": 15
+    },
+    {
+        "_id": "64301123f5a7e52ce1e8fa68",
+        "name": "chess",
+        "instructor": "Magnus Carlsen",
+        "seats": 30,
+        "price": 30,
+        "image": "https://images.unsplash.com/photo-1560174038-da43ac74f01b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=557&q=80",
+        "details": "I found the product to be incredibly useful and easy to use. The interface is intuitive, and it has all the features I need. Highly recommend it!",
+        "students": 28
+    },
+    {
+        "_id": "6430113af5a7e52ce1e8fa69",
+        "name": "golf",
+        "instructor": "Robert",
+        "seats": 22,
+        "price": 60,
+        "image": "https://images.unsplash.com/photo-1593282153762-a41e3cceb06c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+        "details": "This is by far the best service I have ever used. The customer support is outstanding, and the product itself is top-notch. I couldn't be happier!",
+        "students": 10
+    },
+    {
+        "_id": "6430113af5a7e52ce1e8fa60",
+        "name": "badminton",
+        "instructor": "Sadik",
+        "seats": 20,
+        "price": 30,
+        "image": "https://images.unsplash.com/photo-1559309106-ed14040fd35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=327&q=80",
+        "details": "This is by far the best service I have ever used. The customer support is outstanding, and the product itself is top-notch. I couldn't be happier!",
+        "students": 13
+    }
+]
