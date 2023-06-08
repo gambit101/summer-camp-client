@@ -63,7 +63,7 @@ const ClassCard = ({ cls }) => {
                 <h2 className="card-title">Price: {price}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions">
-                    <button onClick={() => handleAddToCart(cls)} className="btn bg-red-500 text-black">Buy Now</button>
+                    <button onClick={() => handleAddToCart(cls)} className="btn bg-red-500 text-black">Select</button>
                 </div>
             </div>
         </div>

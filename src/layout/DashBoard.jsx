@@ -11,6 +11,7 @@ const DashBoard = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
 
+
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -24,8 +25,60 @@ const DashBoard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-red-500 text-base-content">
 
+                    {isAdmin ? (
+                        <>
+                            <li className="text-2xl"><NavLink to='/'>Manage Classes</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/dashboard/allusers'>Manage Users</NavLink></li>
+                            <div className="divider"></div>
+                            <li className="text-2xl"><NavLink to='/'>Home</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/instructors'>Instructors</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/class'>Classes</NavLink></li>
+                        </>
+                    ) : (
+                        isInstructor ? (
+                            <>
+                                <li className="text-2xl"><NavLink to='/dashboard/addItem'>Add a class</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/dashboard/manageItems'>My classes</NavLink></li>
+                                <div className="divider"></div>
+                                <li className="text-2xl"><NavLink to='/'>Home</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/instructors'>Instructors</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/class'>Classes</NavLink></li>
+                            </>
+                        ) : (
+                            <>
+                                <li className="text-2xl"><NavLink to='/dashboard/myclasses'>My Classes <span className="text-white badge">+{cart?.length || 0}</span></NavLink></li>
+                                <li className="text-2xl"><NavLink>My Enrolled Classes</NavLink></li>
+                                <li className="text-2xl"><NavLink>Payment History</NavLink></li>
+                                <div className="divider"></div>
+                                <li className="text-2xl"><NavLink to='/'>Home</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/instructors'>Instructors</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/class'>Classes</NavLink></li>
+                            </>
+                        )
+                    )}
 
-                    {
+
+                    {/* {
+                        isInstructor ? (<li><NavLink to='/dashboard/addItem'>Add a class</NavLink></li>
+                        <li><NavLink to='/dashboard/allusers'>My classes</NavLink></li>
+                        <div className="divider"></div>
+                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/instructors'>Instructors</NavLink></li>
+                        <li><NavLink to='/class'>Classes</NavLink></li>) :
+                            
+                         isAdmin  
+                            (<li><NavLink to='/dashboard/myclasses'>My Classes <span className="text-white badge">+{cart?.length || 0}</span></NavLink></li>
+                            <li><NavLink>My Enrolled Classes</NavLink></li>
+                            <li><NavLink>Payment History</NavLink></li>
+                            <div className="divider"></div>
+                            <li><NavLink to='/'>Home</NavLink></li>
+                            <li><NavLink to='/instructors'>Instructors</NavLink></li>
+                            <li><NavLink to='/class'>Classes</NavLink></li>)
+                        
+
+                    } */}
+
+                    {/* {
                         isAdmin ? <>
                             <li><NavLink to='/'>Manage Classes</NavLink></li>
                             <li><NavLink to='/dashboard/allusers'>Manage Users</NavLink></li>
@@ -42,7 +95,8 @@ const DashBoard = () => {
                             <li><NavLink to='/instructors'>Instructors</NavLink></li>
                             <li><NavLink to='/class'>Classes</NavLink></li>
                         </>
-                    }
+                    
+                    } */}
 
                 </ul>
 
