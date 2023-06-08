@@ -29,6 +29,25 @@ const AllUsers = () => {
             })
     }
 
+    const handleMakeInstructor = user => {
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an instructor now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
     return (
         <div className="w-full ml-12">
             <h3 className="text-3xl font-semibold">Total Users: {users.length}</h3>
@@ -52,7 +71,7 @@ const AllUsers = () => {
                                 <td>{user.email}</td>
                                 <td>{user.role === 'admin' ? 'admin' : <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white">Make Admin</button>}</td>
                                 <td>
-                                    <button className="btn btn-ghost bg-red-600  text-white">Make Instructor</button>
+                                    {user.role === 'instructor' ? 'instructor' : <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-red-600  text-white">Make Instructor</button>}
                                 </td>
                             </tr>)
                         }

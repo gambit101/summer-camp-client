@@ -41,7 +41,6 @@ const MyClasses = () => {
             <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
                 <h2 className="text-3xl badge">Total Classes: {cart.length}</h2>
                 <h2 className="text-3xl">Total Price: ${total}</h2>
-                <button className="btn btn-warning btn-sm">PAY</button>
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
@@ -53,6 +52,7 @@ const MyClasses = () => {
                             <th>Class Name</th>
                             <th>Price</th>
                             <th>Action</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,6 +77,7 @@ const MyClasses = () => {
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
+                                <td><button className="btn btn-warning btn-sm">PAY</button></td>
                             </tr>)
                         }
 

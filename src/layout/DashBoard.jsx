@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const DashBoard = () => {
     const [cart] = useCart();
@@ -8,6 +9,7 @@ const DashBoard = () => {
     // const isAdmin = true;
 
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -41,8 +43,6 @@ const DashBoard = () => {
                             <li><NavLink to='/class'>Classes</NavLink></li>
                         </>
                     }
-
-                    {/* Sidebar content here */}
 
                 </ul>
 
