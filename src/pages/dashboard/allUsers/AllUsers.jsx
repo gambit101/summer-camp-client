@@ -1,33 +1,34 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const AllUsers = () => {
-
+    const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
     });
 
-    const handleMakeAdmin = user =>{
+    const handleMakeAdmin = user => {
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: 'PATCH'
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.modifiedCount) {
-                refetch();
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: `${user.name} is an admin now`,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an admin now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
-   
+
     return (
         <div className="w-full ml-12">
             <h3 className="text-3xl font-semibold">Total Users: {users.length}</h3>
@@ -49,13 +50,13 @@ const AllUsers = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user.role === 'admin' ? 'admin' : <button  onClick={() => handleMakeAdmin(user)}  className="btn btn-ghost bg-orange-600  text-white">Make Admin</button>}</td>
+                                <td>{user.role === 'admin' ? 'admin' : <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white">Make Admin</button>}</td>
                                 <td>
-                                    <button  className="btn btn-ghost bg-red-600  text-white">Make Instructor</button>
+                                    <button className="btn btn-ghost bg-red-600  text-white">Make Instructor</button>
                                 </td>
                             </tr>)
                         }
-                    
+
 
                     </tbody>
                 </table>

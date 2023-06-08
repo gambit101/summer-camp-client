@@ -49,8 +49,8 @@ const MyClasses = () => {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Food</th>
-                            <th>Item Name</th>
+                            <th>Image</th>
+                            <th>Class Name</th>
                             <th>Price</th>
                             <th>Action</th>
                         </tr>
@@ -73,7 +73,7 @@ const MyClasses = () => {
                                 <td className="uppercase">
                                     {item.name}
                                 </td>
-                                <td className="text-end">${item.price}</td>
+                                <td>${item.price}</td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
