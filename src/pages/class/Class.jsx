@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ClassCard from "./classCard/ClassCard";
 
 const Class = () => {
     const [classes, setClasses] = useState([]);
@@ -16,19 +17,7 @@ const Class = () => {
             </div>
             <div className="grid grid-cols-3 mx-14">
                 {
-                    classes.map(cls => <div key={cls._id} className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img src={cls.image} alt="Shoes" className="rounded-xl w-80 h-96" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title uppercase text-white">{cls.name}</h2>
-                            <h2 className="card-title">Instructor: {cls.instructor}</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions">
-                                <button className="btn bg-red-500 text-black">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>)
+                    classes.map(cls => <ClassCard key={cls._id} cls={cls}></ClassCard>)
                 }
             </div>
         </div>

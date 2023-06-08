@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../shared/socialLogin/SocialLogin";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -71,6 +72,8 @@ const Login = () => {
                         </div>
                     </form>
                     <p>New here? <Link to='/signUp'>Create an account</Link></p>
+
+                    <SocialLogin></SocialLogin>
 
                 </div>
             </div>
