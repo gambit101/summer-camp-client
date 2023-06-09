@@ -14,6 +14,7 @@ import AllUsers from "../pages/dashboard/allUsers/AllUsers";
 import AddItem from "../pages/dashboard/addItem/AddItem";
 import InstructorRoute from "./InstructorRoute";
 import ManageItems from "../pages/dashboard/manageItems/ManageItems";
+import Manage from "../pages/dashboard/manage/Manage";
 
 export const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
             {
                 path: 'manageItems',
                 element: <InstructorRoute><ManageItems></ManageItems></InstructorRoute>
+            },
+            {
+                path: 'manage',
+                element: <Manage></Manage>
             }
         ]
     }

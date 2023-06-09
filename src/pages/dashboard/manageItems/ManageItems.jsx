@@ -44,7 +44,7 @@ const ManageItems = () => {
                                 </td>
                                 <td>$ {item.price}</td>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs">approved</button>
+                                    <button className="btn btn-ghost btn-xs">{item.status}</button>
                                 </td>
                                 <td>
                                    <button className="btn bg-red-500">Update</button>

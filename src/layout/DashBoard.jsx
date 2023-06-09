@@ -27,8 +27,8 @@ const DashBoard = () => {
 
                     {isAdmin ? (
                         <>
-                            <li className="text-2xl"><NavLink to='/'>Manage Classes</NavLink></li>
-                            <li className="text-2xl"><NavLink to='/dashboard/allusers'>Manage Users</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/dashboard/manage'>Manage Classes</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/'>Manage Users</NavLink></li>
                             <div className="divider"></div>
                             <li className="text-2xl"><NavLink to='/'>Home</NavLink></li>
                             <li className="text-2xl"><NavLink to='/instructors'>Instructors</NavLink></li>
