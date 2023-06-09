@@ -17,6 +17,8 @@ const ManageItems = () => {
                             <th>Item </th>
                             <th>Instructor </th>
                             <th>Price </th>
+                            <th>Enrolled Students </th>
+                            <th>Feedback </th>
                             <th>Status</th>
                             <th>Update</th>
                         </tr>
@@ -43,11 +45,16 @@ const ManageItems = () => {
                                     {item.instructor}
                                 </td>
                                 <td>$ {item.price}</td>
-                                <td>
-                                    <button className="btn btn-ghost btn-xs">{item.status}</button>
+                                <td>#</td>
+                                <td>{
+                                    !item.status ? <>No Feedback yet</> : <>#</>
+                                }
                                 </td>
                                 <td>
-                                   <button className="btn bg-red-500">Update</button>
+                                    <button className="btn btn-ghost btn-xs">{item.status ? <>{item.status}</> : <>pending</>}</button>
+                                </td>
+                                <td>
+                                    <button className="btn bg-red-500">Update</button>
                                 </td>
                             </tr>)
                         }

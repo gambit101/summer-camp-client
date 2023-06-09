@@ -7,8 +7,10 @@ const Class = () => {
     useEffect(() => {
         fetch('http://localhost:5000/info')
             .then(res => res.json())
-            .then(data => setClasses(data))
+            .then(data => setClasses(data.filter(item => item.status === 'approved')))
     }, [])
+
+
     return (
         <div>
             <div>

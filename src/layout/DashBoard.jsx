@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
+import { FaCreativeCommonsBy, FaHome, FaUserFriends } from "react-icons/fa";
 
 const DashBoard = () => {
     const [cart] = useCart();
@@ -27,11 +28,11 @@ const DashBoard = () => {
 
                     {isAdmin ? (
                         <>
-                            <li className="text-2xl"><NavLink to='/dashboard/manage'>Manage Classes</NavLink></li>
-                            <li className="text-2xl"><NavLink to='/'>Manage Users</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/dashboard/manage'><FaUserFriends></FaUserFriends> Manage Classes</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/dashboard/allusers'><FaCreativeCommonsBy></FaCreativeCommonsBy> Manage Users</NavLink></li>
                             <div className="divider"></div>
-                            <li className="text-2xl"><NavLink to='/'>Home</NavLink></li>
-                            <li className="text-2xl"><NavLink to='/instructors'>Instructors</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/'><FaHome></FaHome> Home</NavLink></li>
+                            <li className="text-2xl"><NavLink to='/instructors'> Instructors</NavLink></li>
                             <li className="text-2xl"><NavLink to='/class'>Classes</NavLink></li>
                         </>
                     ) : (
@@ -40,7 +41,7 @@ const DashBoard = () => {
                                 <li className="text-2xl"><NavLink to='/dashboard/addItem'>Add a class</NavLink></li>
                                 <li className="text-2xl"><NavLink to='/dashboard/manageItems'>My classes</NavLink></li>
                                 <div className="divider"></div>
-                                <li className="text-2xl"><NavLink to='/'>Home</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
                                 <li className="text-2xl"><NavLink to='/instructors'>Instructors</NavLink></li>
                                 <li className="text-2xl"><NavLink to='/class'>Classes</NavLink></li>
                             </>
@@ -50,7 +51,7 @@ const DashBoard = () => {
                                 <li className="text-2xl"><NavLink>My Enrolled Classes</NavLink></li>
                                 <li className="text-2xl"><NavLink>Payment History</NavLink></li>
                                 <div className="divider"></div>
-                                <li className="text-2xl"><NavLink to='/'>Home</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
                                 <li className="text-2xl"><NavLink to='/instructors'>Instructors</NavLink></li>
                                 <li className="text-2xl"><NavLink to='/class'>Classes</NavLink></li>
                             </>

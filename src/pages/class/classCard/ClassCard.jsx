@@ -3,8 +3,12 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import useCart from "../../../hooks/useCart";
+import useAdmin from "../../../hooks/useAdmin";
+import useInstructor from "../../../hooks/useInstructor";
 
 const ClassCard = ({ cls }) => {
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     const { image, name, instructor, price, _id } = cls;
     const { user } = useContext(AuthContext);
     const [, refetch] = useCart();
@@ -14,7 +18,7 @@ const ClassCard = ({ cls }) => {
     const handleAddToCart = cls => {
         console.log(cls);
         if (user && user.email) {
-            const cartItem = {clsId: _id, name, image, price, email: user.email} 
+            const cartItem = { clsId: _id, name, image, price, email: user.email }
             fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
@@ -29,14 +33,14 @@ const ClassCard = ({ cls }) => {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Food added on the cart.',
+                            title: 'Class added in my classes',
                             showConfirmButton: false,
                             timer: 1500
                         })
                     }
                 })
         }
-        else{
+        else {
             Swal.fire({
                 title: 'Please login to buy the course',
                 icon: 'warning',
@@ -44,11 +48,11 @@ const ClassCard = ({ cls }) => {
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Login now!'
-              }).then((result) => {
+            }).then((result) => {
                 if (result.isConfirmed) {
-                  navigate('/login', {state: {from: location}})
+                    navigate('/login', { state: { from: location } })
                 }
-              })
+            })
         }
     }
 
@@ -63,7 +67,13 @@ const ClassCard = ({ cls }) => {
                 <h2 className="card-title">Price: {price}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions">
-                    <button onClick={() => handleAddToCart(cls)} className="btn bg-red-500 text-black">Select</button>
+                    {
+                        isAdmin || isInstructor ? <>
+                            <button disabled onClick={() => handleAddToCart(cls)} className="btn bg-red-500 text-black">Select</button>
+                        </> : <>
+                            <button onClick={() => handleAddToCart(cls)} className="btn bg-red-500 text-black">Select</button>
+                        </>
+                    }
                 </div>
             </div>
         </div>

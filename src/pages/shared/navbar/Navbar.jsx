@@ -15,10 +15,10 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
         <li><Link to='/class'>Classes</Link></li>
-        <li><Link to='/dashboard'>Dashboard</Link></li>
+        
 
         {
-            user ? <><li><button onClick={handleLogOut} className="btn btn-ghost">Logout</button></li></> : <><li><Link to='/login'>Login</Link></li></>
+            user ? <><li><Link to='/dashboard'>Dashboard</Link></li><li><button onClick={handleLogOut} className="btn btn-ghost">Logout</button></li></> : <><li><Link to='/login'>Login</Link></li></>
         }
     </>
 

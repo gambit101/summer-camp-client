@@ -18,12 +18,12 @@ const Popular = () => {
             <div className="grid grid-cols-3 mx-14">
                 {
                     classes.map(cls => <div key={cls._id} className="card w-96 bg-base-100 shadow-xl image-full mt-6">
-                        <figure><img src={cls.image} alt="Shoes" /></figure>
+                        <figure><img className="h-96 w-full" src={cls.image} alt="Shoes" /></figure>
                         <div className="card-body">
-                            <h2 className="card-title uppercase font-bold">{cls.name}</h2>
+                            <h2 className="card-title uppercase font-bold text-white">{cls.name}</h2>
                             <p>{cls.details}</p>
                             <div className="card-actions justify-end">
-                    <button className="btn bg-red-500 text-black">Buy Now</button>
+                    <button className="btn bg-red-500 text-black">Select</button>
                   </div>
                         </div>
                     </div>)
