@@ -35,7 +35,7 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <img className="h-11" src="https://cdn.pixabay.com/photo/2020/09/16/18/39/icon-5577198_1280.png" alt="" />
+                    <img className="h-11 rounded-full" src="https://img.freepik.com/premium-vector/soccer-player-logo-vector-silhouette_61778-19.jpg?w=740" alt="" />
                     <a className="btn btn-ghost normal-case text-xl">Sports Hero</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
