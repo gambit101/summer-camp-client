@@ -35,8 +35,10 @@ const SocialLogin = () => {
             <div className="flex flex-col w-full border-opacity-50">
                 <div className="divider"></div>
                 <div className="w-full text-center my-4">
-                    <button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline">
-                        <FaGoogle></FaGoogle>
+                    <button onClick={handleGoogleSignIn} className="btn ">
+                    <FaGoogle></FaGoogle>
+                    <p>Google</p>
+                        
                     </button>
                 </div>
             </div>

@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import useCart from "../../../hooks/useCart";
 import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const ClassCard = ({ cls }) => {
     const [isAdmin] = useAdmin();
@@ -55,9 +57,12 @@ const ClassCard = ({ cls }) => {
             })
         }
     }
+    useEffect(() => {
+        AOS.init({ duration: 2000 })
+    }, [])
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-base-100 shadow-xl" data-aos='flip-right'>
             <figure className="px-10 pt-10">
                 <img src={image} alt="Shoes" className="rounded-xl w-80 h-96" />
             </figure>

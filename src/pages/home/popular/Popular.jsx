@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Popular = () => {
     const [classes, setClasses] = useState([]);
@@ -9,8 +11,12 @@ const Popular = () => {
             .then(data => setClasses(data))
     }, [])
 
+    useEffect(() => {
+        AOS.init({ duration: 2000 })
+    }, [])
+
     return (
-        <div>
+        <div data-aos='zoom-in'>
             <div>
                 <h2 className="text-4xl text-red-400 font-bold text-center my-2">--- Popular Courses ---</h2>
                 <p className="text-center">Learn the game from any part of the country and stay fit</p>

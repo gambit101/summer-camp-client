@@ -15,11 +15,13 @@ import AddItem from "../pages/dashboard/addItem/AddItem";
 import InstructorRoute from "./InstructorRoute";
 import ManageItems from "../pages/dashboard/manageItems/ManageItems";
 import Manage from "../pages/dashboard/manage/Manage";
+import ErrorPage from "../pages/errorPage/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
