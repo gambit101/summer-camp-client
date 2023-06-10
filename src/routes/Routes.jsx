@@ -18,6 +18,7 @@ import Manage from "../pages/dashboard/manage/Manage";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 import AdminRoute from "./AdminRoute";
 import Payment from "../pages/dashboard/payment/Payment";
+import PaymentHistory from "../pages/dashboard/paymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
@@ -56,7 +57,7 @@ export const router = createBrowserRouter([
                 element: <MyClasses></MyClasses>
             },
             {
-                path: 'payment',
+                path: 'payment/:id',
                 element: <Payment></Payment>
             },
             {
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
             {
                 path: 'manage',
                 element: <Manage></Manage>
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
             }
         ]
     }

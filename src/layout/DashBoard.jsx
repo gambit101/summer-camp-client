@@ -49,7 +49,7 @@ const DashBoard = () => {
                             <>
                                 <li className="text-2xl"><NavLink to='/dashboard/myclasses'><FaBook></FaBook> My Classes <span className="text-white badge">+{cart?.length || 0}</span></NavLink></li>
                                 <li className="text-2xl"><NavLink><FaDoorOpen></FaDoorOpen> My Enrolled Classes</NavLink></li>
-                                <li className="text-2xl"><NavLink><FaWallet></FaWallet> Payment History</NavLink></li>
+                                <li className="text-2xl"><NavLink  to='/dashboard/paymentHistory'><FaWallet></FaWallet> Payment History</NavLink></li>
                                 <div className="divider"></div>
                                 <li className="text-2xl"><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
                                 <li className="text-2xl"><NavLink to='/instructors'><FaClipboard></FaClipboard>Instructors</NavLink></li>
