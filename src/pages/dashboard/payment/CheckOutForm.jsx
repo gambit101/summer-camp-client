@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 // import useCart from "../../../hooks/useCart";
 
 const CheckOutForm = ({ price, cart, id }) => {
@@ -100,6 +101,13 @@ const CheckOutForm = ({ price, cart, id }) => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
                         // display confirm
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Payment Successful',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                     }
                 })
             
@@ -108,7 +116,7 @@ const CheckOutForm = ({ price, cart, id }) => {
 
     return (
         <>
-            <form className="w-2/3 m-10" onSubmit={handleSubmit}>
+            <form className="w-2/3  ml-48 mt-10" onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                         style: {
@@ -125,12 +133,14 @@ const CheckOutForm = ({ price, cart, id }) => {
                         },
                     }}
                 />
-                <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
+                <button className="btn btn-primary btn-sm mt-10 ml-64" type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>
             {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
+            <div className="text-center mt-10">
             {transactionId && <p className="text-green-600">Transaction complete with transactionId: {transactionId}</p>}
+            </div>
         </>
     );
 };

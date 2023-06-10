@@ -18,7 +18,7 @@ const Payment = () => {
     console.log(price);
     return (
         <div className="w-full"> 
-            <h2 className="text-3xl">Payment</h2>
+            <h2 className="text-3xl text-center text-red-500">Payment</h2>
             <Elements stripe={stripePromise}>
                 <CheckOutForm cart={myClass} price={price} id={id}></CheckOutForm>
             </Elements>
