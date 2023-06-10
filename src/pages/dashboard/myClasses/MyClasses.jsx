@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useCart from "../../../hooks/useCart";
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const MyClasses = () => {
@@ -77,7 +78,7 @@ const MyClasses = () => {
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
-                                <td><button className="btn btn-warning btn-sm">PAY</button></td>
+                                <td><Link to='/dashboard/payment'><button className="btn btn-warning btn-sm">PAY</button></Link></td>
                             </tr>)
                         }
 
