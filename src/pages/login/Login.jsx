@@ -39,7 +39,7 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content  flex-col lg:flex-row-reverse">
                 <div className="text-center md:w-1/2 lg:text-left">
-                    <h1 className="text-5xl font-bold text-center">Login now!</h1>
+                    <h1 className="text-5xl font-bold text-center mb-4">Login now!</h1>
                     <img className="rounded-xl" src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-125.jpg?w=740&t=st=1686376397~exp=1686376997~hmac=629dcab8fc592955ff97787bc691cbe14f31d17097fa4c66578f8d3f34839889" alt="" />
                 </div>
                 <div className="card md:w-1/2 w-full max-w-sm shadow-2xl bg-base-100">

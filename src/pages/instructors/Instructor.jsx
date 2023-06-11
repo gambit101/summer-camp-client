@@ -4,7 +4,7 @@ const Instructor = () => {
     const [instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        fetch('instructors.json')
+        fetch('http://localhost:5000/instructors')
             .then(res => res.json())
             .then(data => setInstructors(data))
     }, [])
@@ -14,7 +14,7 @@ const Instructor = () => {
                 <h2 className="text-4xl text-red-400 font-bold text-center my-2">--- Our Instructors ---</h2>
                 <p className="text-center">Learn the game from any part of the country and stay fit</p>
             </div>
-            <div className="grid grid-cols-3">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-3">
                 {
                     instructors.map(instructor => <div key={instructor._id} className="card w-96 bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">

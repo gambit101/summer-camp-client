@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
-import { FaBook, FaClipboard, FaCreativeCommonsBy, FaDoorOpen, FaHome, FaSchool, FaUserFriends, FaWallet } from "react-icons/fa";
+import { FaAddressBook, FaBook, FaClipboard, FaClipboardList, FaCreativeCommonsBy, FaDoorOpen, FaHome, FaSchool, FaUserFriends, FaWallet } from "react-icons/fa";
 
 const DashBoard = () => {
     const [cart] = useCart();
@@ -38,8 +38,8 @@ const DashBoard = () => {
                     ) : (
                         isInstructor ? (
                             <>
-                                <li className="text-2xl"><NavLink to='/dashboard/addItem'>Add a class</NavLink></li>
-                                <li className="text-2xl"><NavLink to='/dashboard/manageItems'>My classes</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/dashboard/addItem'><FaAddressBook></FaAddressBook> Add a class</NavLink></li>
+                                <li className="text-2xl"><NavLink to='/dashboard/manageItems'><FaClipboardList></FaClipboardList> My classes</NavLink></li>
                                 <div className="divider"></div>
                                 <li className="text-2xl"><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
                                 <li className="text-2xl"><NavLink to='/instructors'><FaClipboard></FaClipboard>Instructors</NavLink></li>

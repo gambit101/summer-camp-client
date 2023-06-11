@@ -13,7 +13,7 @@ const Extra = () => {
                 <h2 className="text-4xl text-red-400 font-bold text-center my-2">--- Moving forward story ---</h2>
                 <p className="text-center">Field performance will be much better than before</p>
             </div>
-            <div className="grid grid-cols-3 mx-14" >
+            <div className="grid grid-cols-1 lg:grid-cols-3 mx-14" >
                 <div className="card card-compact w-96 bg-base-100 shadow-xl" data-aos='fade-left'>
                     <figure><img className="rounded-xl" src="https://www.khelbei.com/media/wysiwyg/Niloy.webp" alt="Shoes" /></figure>
                     <div className="card-body">

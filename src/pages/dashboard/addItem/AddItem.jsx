@@ -98,7 +98,7 @@ const AddItem = () => {
                 {/* file input */}
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Item Image</span>
+                        <span className="label-text">Class Image</span>
                     </label>
                     <input type="file" {...register("image", { required: true, maxLength: 120 })} className="file-input file-input-bordered file-input-error w-full max-w-xs" />
                 </div>

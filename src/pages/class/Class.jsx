@@ -17,7 +17,7 @@ const Class = () => {
                 <h2 className="text-4xl text-red-400 font-bold text-center my-2">--- Our Courses ---</h2>
                 <p className="text-center">Learn the game from any part of the country and stay fit</p>
             </div>
-            <div className="grid grid-cols-3 mx-14">
+            <div className="grid  lg:grid-cols-3 mx-14">
                 {
                     classes.map(cls => <ClassCard key={cls._id} cls={cls}></ClassCard>)
                 }
