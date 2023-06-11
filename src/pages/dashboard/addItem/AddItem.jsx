@@ -4,8 +4,10 @@ import { useForm } from 'react-hook-form';
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
+
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token
 const AddItem = () => {
+    
     const [axiosSecure] = useAxiosSecure();
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, reset } = useForm();
@@ -103,7 +105,7 @@ const AddItem = () => {
                     <input type="file" {...register("image", { required: true, maxLength: 120 })} className="file-input file-input-bordered file-input-error w-full max-w-xs" />
                 </div>
 
-                <input className="btn my-4" type="submit" value="Add Class" />
+                <input className="btn bg-red-600 text-white my-4" type="submit" value="Add Class" />
 
             </form>
         </div>

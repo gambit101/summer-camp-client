@@ -3,13 +3,19 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../shared/socialLogin/SocialLogin";
+import { useState } from "react";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
+    const [show, setShow] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
+
+    const handleShow = () =>{
+        setShow(!show)
+    }
 
     const handleLogin = event => {
         event.preventDefault();
@@ -54,16 +60,11 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                            <input type={show? "text" : "password"} name="password" placeholder="password" className="input input-bordered" />
                            
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-
-                            </label>
-
-
-
+                        <div>
+                            <button onClick={handleShow} className="btn">{show? "hide password" : "show password"}</button>
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn bg-red-500" type="submit" value="Login" />
