@@ -11,7 +11,7 @@ import 'aos/dist/aos.css'
 const ClassCard = ({ cls }) => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
-    const { image, name, instructor, price, _id } = cls;
+    const { image, name, instructor, price, _id, seats } = cls;
     const { user } = useContext(AuthContext);
     const [, refetch] = useCart();
     const navigate = useNavigate();
@@ -70,7 +70,8 @@ const ClassCard = ({ cls }) => {
                 <h2 className="card-title uppercase text-white">{name}</h2>
                 <h2 className="card-title">Instructor: {instructor}</h2>
                 <h2 className="card-title">Price: {price}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">Available Seats: {seats}</h2>
+                {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
                 <div className="card-actions">
                     {
                         isAdmin || isInstructor ? <>

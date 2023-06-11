@@ -19,6 +19,7 @@ import ErrorPage from "../pages/errorPage/ErrorPage";
 import AdminRoute from "./AdminRoute";
 import Payment from "../pages/dashboard/payment/Payment";
 import PaymentHistory from "../pages/dashboard/paymentHistory/PaymentHistory";
+import Enrolled from "../pages/dashboard/enrolled/Enrolled";
 
 export const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <Payment></Payment>
+            },
+            {
+                path: 'enrolled',
+                element: <Enrolled></Enrolled>
             },
             {
                 path: 'allusers',
